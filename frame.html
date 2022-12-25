@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="bootselect/dist/css/bootstrap-select.min.css">
+    <style>
+    	 #boxA, #boxB {
+            float:left;padding:10px;margin:10px;-moz-user-select:none;
+         }
+         #boxA { background-color: #6633FF; width:75px; height:75px;  }
+         #boxB { background-color: #FF6699; width:150px; height:150px; }
+         .urut {
+         	width: 40px;
+         }
+    </style>
+    <title>Hello, world!</title>
+  </head>
+  <body>
+ 
+	<!-- Modal -->
+	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+	      <div class="modal-body">
+	        <!-- Form -->
+	        <form>
+	          <!-- Tanggal -->
+	          <div class="form-group">
+			    <label for="tanggal">Selenium elements</label>
+			    <br>	
+			    <input type="number" class="urut" value="1">
+			    <input type="number" class="urut" value="2">
+			    <input type="number" class="urut" value="3">
+			  </div>
+
+
+	          <div class="form-group">
+			    <label for="tanggal">Tanggal Clear Selenium</label>
+			    <input type="date" class="form-control tanggal" id="tanggal" name="tanggal" placeholder="Enter email" value="2001-09-19">
+			  </div>
+			  <!-- Nama -->
+			  <div class="form-group">
+			    <label for="nama">Nama Backspace</label>
+			    <input type="text" class="form-control nama" id="nama" name="nama" placeholder="Enter email" value="Bimo">
+			  </div>
+
+			  <div class="form-group">
+			    <label for="alamat1">alamat1 Select</label>
+			    <select class="form-control alamat1" name="alamat1" id="alamat1">
+			      <option value="1">Subang</option>
+			      <option value="2">Jakarta</option>
+			      <option value="3">Bandung</option>
+			      <option value="4">Karawang</option>
+			      <option value="5">Cirebon</option>
+			    </select>
+			  </div>
+
+			  <div class="form-group">
+			    <label for="alamat2">alamat2 Pyautogui</label>
+			    <select class="selectpicker form-control alamat2" name="alamat2" id="alamat2" data-live-search="true">
+			      <option value="1">Subang</option>
+			      <option value="2">Jakarta</option>
+			      <option value="3">Bandung</option>
+			      <option value="4">Karawang</option>
+			      <option value="5">Cirebon</option>
+			    </select>
+			  </div>
+			  
+			  <div class="input-group">
+			  	<label>Upload Input</label>
+			  </div>
+			  <div class="input-group mb-3">
+				  <div class="custom-file">
+				    <input type="file" id="upload1" name="upload1">
+				  </div>
+			  </div>
+
+			  <div class="input-group">
+			  	<label>Upload Button</label>
+			  </div>
+			  <div class="input-group mb-3">
+				  <div class="custom-file">
+				    <input type="file" id="upload2" name="upload2">
+				  </div>
+			  </div>
+
+			  <div class="input-group dragdrop">
+				 <h2>Drag and drop HTML5 demo</h2>
+		         <div class="boxA" id="boxA" draggable="true" ondragstart="return dragStart(event)">
+		         	<p>Drag Me</p>
+		         </div>
+		         
+		         <div class="boxB" id="boxB" ondragenter="return dragEnter(event)" ondrop="return dragDrop(event)" ondragover="return dragOver(event)"></div>
+			  </div>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-danger show">Show Submit Alert 2 Second</button>
+	        <button type="button" class="btn btn-primary simpan" data-dismiss="modal">Save changes</button>
+	      </div>
+	      </form>
+	    </div>
+	  </div>
+	</div>
+
+
+	<div class="container mt-5">	
+		<div class="row mb-3">
+  			<div class="col-md-12">
+  				<a href="index.html" class="btn btn-success form-control refresh">Refresh Page</a>
+  				<a href="index.html" target="_BLANK" class="btn btn-secondary form-control newpage">New Page</a>
+  			</div>
+  		</div>	
+		<!-- <button type="button" class="btn btn-primary mb-3" data-toggle="modal" data-target="#exampleModal">Tambah Data</button> -->
+		<div class="dropdown">
+		  <button class="btn btn-primary dropdown-toggle ddcont" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		    Dropdown button
+		  </button>
+		  <div class="dropdown-menu ddlist" aria-labelledby="dropdownMenuButton">
+		    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#exampleModal">Input Data</a>
+		  </div>
+		</div>
+
+		<div class="row">	
+			<div class="col-md-12">
+				<table class="table">
+				  <thead>
+				    <tr>
+				      <th scope="col">Tanggal</th>
+				      <th scope="col">Nama</th>
+				      <th scope="col">Alamat1</th>
+				      <th scope="col">Alamat2</th>
+				      <th scope="col">Input1</th>
+				      <th scope="col">Input2</th>
+				    </tr>
+				  </thead>
+				  <tbody>
+				    
+				  </tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
+
+
+    <script src="jquery/jquery-3.6.3.slim.min.js"></script>
+    <script src="popper.min.js"></script>
+    <script src="bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bootselect/dist/js/bootstrap-select.min.js"></script>
+    <script>
+    	$(function () {
+		    $('selectSearch').selectpicker();
+		});
+
+		$('.ddcont').on('mouseover', function() {
+			$('.ddcont').toggleClass('show')
+			$('.ddlist').toggleClass('show')
+		})
+
+		$('.simpan').on('click', function() {
+			$('.ddcont').toggleClass('show')
+			$('.ddlist').toggleClass('show')
+			$('.simpan').hide()
+
+		}) 
+
+		$('.ddlist').on('click', function() {
+			$('#tanggal').val('2001-09-20')
+			$('#nama').val('Diana')
+			$('.dragdrop').html(`
+				<h2>Drag and drop HTML5 demo</h2>
+		         <div id="boxA" draggable="true" ondragstart="return dragStart(event)">
+		         	<p>Drag Me</p>
+		         </div>
+		         
+		         <div id="boxB" ondragenter="return dragEnter(event)" ondrop="return dragDrop(event)" ondragover="return dragOver(event)"></div>
+			`)
+
+		})
+
+		$('.simpan').hide()
+
+		$('.show').on('click', function() {
+			setTimeout(function() {
+				var name = prompt('Type anything')
+				alert('You type ' + name)
+
+				$('.simpan').show()
+			},2000)
+		})
+
+
+		function dragStart(ev) {
+            ev.dataTransfer.effectAllowed='move';
+            ev.dataTransfer.setData("Text", ev.target.getAttribute('id'));
+            ev.dataTransfer.setDragImage(ev.target,0,0);
+            return true;
+         }
+         function dragEnter(ev) {
+            event.preventDefault();
+            return true;
+         }
+         function dragOver(ev) {
+            return false;
+         }
+         function dragDrop(ev) {
+            var src = ev.dataTransfer.getData("Text");
+            ev.target.appendChild(document.getElementById(src));
+            ev.stopPropagation();
+            return false;
+         }
+
+
+
+
+
+         let i = 1; 
+         const nama    = document.querySelector('#nama');
+         const tanggal = document.querySelector('#tanggal');
+         const alamat1 = document.querySelector('#alamat1');
+         const alamat2 = document.querySelector('#alamat2');
+         const upload1 = document.querySelector('#upload1');
+         const upload2 = document.querySelector('#upload2');
+
+         const simpan = document.querySelector('.simpan');
+            simpan.addEventListener('click', function() {
+                p0 = document.createElement('tr'); 
+                p1 = document.createElement('td'); 
+                p2 = document.createElement('td'); 
+                p3 = document.createElement('td'); 
+                p4 = document.createElement('td'); 
+                p5 = document.createElement('td'); 
+                p6 = document.createElement('td'); 
+                p7 = document.createElement('td'); 
+                const urut = [...$('.urut')]
+	            var nomor = ''
+	            urut.forEach(i => {
+	            	nomor += i.value
+	            })
+
+                t1 = document.createTextNode(`${nomor}`);
+                t2 = document.createTextNode(`${nama.value}`);
+                t3 = document.createTextNode(`${tanggal.value}`);
+                t4 = document.createTextNode(`${alamat1.value}`);
+                t5 = document.createTextNode(`${alamat2.value}`);
+                t6 = document.createTextNode(`${upload1.value}`);
+                t7 = document.createTextNode(`${upload2.value}`);
+
+                
+	            
+	            
+
+                p1.appendChild(t1);
+                p2.appendChild(t2);
+                p3.appendChild(t3);
+                p4.appendChild(t4);
+                p5.appendChild(t5);
+                p6.appendChild(t6);
+                p7.appendChild(t7);
+
+                // Add table row (Dimulai dari index 1)
+                document.querySelector('tbody').appendChild(p0); 
+                var tr = document.querySelector(`tbody tr:nth-child(${i})`); 
+                // Add td into table row
+                tr.appendChild(p1); 
+                tr.appendChild(p2); 
+                tr.appendChild(p3); 
+                tr.appendChild(p4); 
+                tr.appendChild(p5); 
+                tr.appendChild(p6); 
+                tr.appendChild(p7); 
+                nama.value = "";
+				tanggal.value = "";
+				alamat1.value = "";
+				alamat2.value = "";
+				upload1.value = "";
+				upload2.value = "";
+                i++; 
+            })
+
+            
+    </script>
+  </body>
+</html>
