@@ -7,14 +7,24 @@
     <link rel="stylesheet" type="text/css" href="bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="bootselect/dist/css/bootstrap-select.min.css">
     <style>
-    	 #boxA, #boxB {
-            float:left;padding:10px;margin:10px;-moz-user-select:none;
-         }
-         #boxA { background-color: #6633FF; width:75px; height:75px;  }
-         #boxB { background-color: #FF6699; width:80px; height:80px; }
-         .urut {
-         	width: 40px;
-         }
+         .urut {width: 40px;}
+
+
+  #draggables {
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #000;
+    border-radius: 15px;
+    width: 100%;
+    display: flex; 
+    justify-content: space-between;
+  }
+  .rotate {
+    transition-duration: .5s;
+    transition-property: transform;
+    transform: rotate(360deg);
+  }
+
     </style>
     <title>Hello, world!</title>
   </head>
@@ -152,7 +162,10 @@
 
 
 
-    <script src="jquery/jquery-3.6.3.slim.min.js"></script>
+    <!-- <script src="jquery/jquery-3.6.3.slim.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script> -->
+	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+	<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <script src="popper.min.js"></script>
     <script src="bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="bootselect/dist/js/bootstrap-select.min.js"></script>
@@ -177,13 +190,29 @@
 			$('#tanggal').val('2001-09-20')
 			$('#nama').val('Diana')
 			$('.dragdrop').html(`
-			
-		         <div id="boxA" draggable="true" ondragstart="return dragStart(event)">
-		         	<p>Drag Me</p>
-		         </div>
-		         
-		         <div id="boxB" ondragenter="return dragEnter(event)" ondrop="return dragDrop(event)" ondragover="return dragOver(event)"></div>
+				<div id="draggables" style="display:flex; justify-content: space-between; width:100%; border:2px solid white; padding:5px;">  
+    <div id="drag" class="drag" style="width: 50px; height: 50px; background-color: salmon;"></div>
+    <div id="drop" class="drop" style="width: 80px; height: 80px; background-color: lightblue;"></div>
+</div>  
+
 			`)
+
+			$(function () {
+			    $(".drag").draggable();
+			    $(".bad").draggable({
+			      revert:"invalid"
+			    });
+			    $("#drop").droppable({
+			      activeClass:"ui-state-active",
+			      hoverClass: "rotate",
+			      accept:".drag",
+			      drop: function(event,ui) {
+			        ui.draggable.fadeOut(function () {
+			          ui.draggable.remove();
+			        });     
+			      }
+			    });
+			 });
 
 		})
 
@@ -287,6 +316,7 @@
                 i++; 
             })
 
+            
             
     </script>
   </body>
